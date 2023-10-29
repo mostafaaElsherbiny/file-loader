@@ -1,0 +1,33 @@
+.responsive-container {
+  height: 100px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.responsive-text {
+  font-size: 20px;
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .responsive-text {
+    font-size: 16px;
+  }
+
+  .responsive-container {
+    height: 200px;
+    width: 50%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .responsive-text {
+    font-size: 14px;
+
+  }
+}
