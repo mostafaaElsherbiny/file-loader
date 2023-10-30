@@ -1,3 +1,5 @@
+import './message.css'
+
 export type StatusType = "warning" | "success" | "none";
 
 interface MessageProps {

@@ -1,3 +1,5 @@
+import "./fileLoader.css";
+
 import { ChangeEvent, useState } from "react";
 
 import Message, { StatusType } from "./message";
