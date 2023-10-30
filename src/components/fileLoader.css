@@ -129,7 +129,7 @@ button.close {
 
 @media (max-width: 800px) {
   .wrapper {
-    width: 80%;
+    width: 360px;
     padding: 10px 25px;
     margin: 0 auto;
   }
