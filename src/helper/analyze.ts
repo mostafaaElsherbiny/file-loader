@@ -3,16 +3,19 @@ export function analyze(text: string): Map<string, number> {
   const words = text.split(" ");
 
   for (const word of words) {
-    if (word.trim() === "") {
+    const wordTrim = word.trim();
+    if (wordTrim == "") {
       continue;
     }
-    if (map.has(word)) {
-      const count = map.get(word) as number;
-      map.set(word, count + 1);
+    if (map.has(wordTrim)) {
+      const count = map.get(wordTrim) as number;
+      map.set(wordTrim, count + 1);
     } else {
-      map.set(word, 1);
+      map.set(wordTrim, 1);
     }
   }
 
   return map;
 }
+
+console.log(analyze("mustafa   mustafa  "));
