@@ -57,21 +57,7 @@ input::file-selector-button {
   font-size: 20px;
 }
 
-.wrapper .btn {
-  width: 100%;
-  height: 45px;
-  background: #fff;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-  cursor: pointer;
-  font-size: 16px;
-  color: #333;
-  font-weight: 600;
-  margin: 30px 0;
-  position: relative;
-}
+.wrapper .btn {}
 
 .danger-box {
   width: 100%;
@@ -116,7 +102,8 @@ button.close {
 
 
 .load-table-box {
-  height: 200px;
+  height: auto;
+  max-height: 200px;
   overflow-y: scroll;
 
 }
@@ -127,9 +114,69 @@ button.close {
 }
 
 
-@media (max-width: 800px) {
+
+
+
+.action-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.action-wrapper .btn {
+  width: 40%;
+  height: 45px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+  margin: 30px 6px;
+  position: relative;
+}
+
+.action-wrapper .btn-danger {
+  background: red;
+  color: #fff
+}
+
+
+.btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media (max-width:1024px) {
+  .wrapper {
+    width: 70%;
+    padding: 10px 25px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 70%;
+    padding: 10px 25px;
+    margin: 0 auto;
+  }
+
+}
+
+@media (max-width: 480px) {
   .wrapper {
     width: 360px;
+    padding: 10px 25px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 280px) {
+  .wrapper {
+    width: 260px;
     padding: 10px 25px;
     margin: 0 auto;
   }

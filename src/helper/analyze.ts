@@ -18,4 +18,4 @@ export function analyze(text: string): Map<string, number> {
   return map;
 }
 
-console.log(analyze("mustafa   mustafa  "));
+// console.log(analyze("mustafa   mustafa  "));

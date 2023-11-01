@@ -19,20 +19,14 @@
   }
 
   .responsive-container {
-    height: 200px;
-    width: 100%;
+    height: 130px;
     margin: auto;
   }
-  .load-text-box {
-    height: 200px;
-    width: 100%;
-    margin: auto;
-  }
+
 }
 
 @media screen and (max-width: 400px) {
   .responsive-text {
     font-size: 14px;
-
   }
 }
