@@ -119,6 +119,7 @@ button.close {
 
 .action-wrapper {
   display: flex;
+  flex-flow: row;
   justify-content: space-around;
 }
 
@@ -151,7 +152,7 @@ button.close {
 
 @media (max-width:1024px) {
   .wrapper {
-    width: 70%;
+    width: 100%;
     padding: 10px 25px;
     margin: 0 auto;
   }
@@ -169,14 +170,15 @@ button.close {
 
 @media (max-width: 480px) {
   .wrapper {
-    width: 360px;
+    width: 80%;
     padding: 10px 25px;
     margin: 0 auto;
   }
 }
+
 @media (max-width: 280px) {
   .wrapper {
-    width: 260px;
+    width: 55%;
     padding: 10px 25px;
     margin: 0 auto;
   }

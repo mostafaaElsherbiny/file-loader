@@ -1,16 +1,20 @@
 import { render, waitFor } from "@testing-library/react";
 import FileLoader from "./fileLoader";
 import user from "@testing-library/user-event";
+import { analyze } from "../helper/analyze";
 
 jest.mock("../helper/analyze", () => ({
-  analyze: jest.fn(
-    () =>
-      new Map([
-        ["word1", 1],
-        ["word2", 2],
-      ])
-  ),
+  analyze: jest.fn(),
 }));
+// jest.mock("../helper/analyze", () => ({
+//   analyze: jest.fn(
+//     () =>
+//       new Map([
+//         ["word1", 1],
+//         ["word2", 2],
+//       ])
+//   ),
+// }));
 
 describe("FileLoader Component", () => {
   it("renders without errors", async () => {
@@ -38,6 +42,12 @@ describe("FileLoader Component", () => {
   });
 
   it("handles file input change correctly and analyze", async () => {
+    (analyze as jest.Mock).mockReturnValue(
+      new Map([
+        ["word1", 1],
+        ["word2", 2],
+      ])
+    );
     const { findByTestId, getByText } = render(<FileLoader />);
 
     const fileInput = await findByTestId("file-loader");
@@ -61,6 +71,10 @@ describe("FileLoader Component", () => {
       expect(getByText("Word")).toBeTruthy();
       expect(getByText("Count")).toBeTruthy();
     });
+
+    expect(analyze).toHaveBeenCalledTimes(1);
+
+    expect(analyze).toHaveBeenCalledWith("mustafa mustafa");
   });
 
   it("handles file input analyze empty", async () => {

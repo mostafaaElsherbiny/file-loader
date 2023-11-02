@@ -117,7 +117,7 @@ function FileLoader() {
               Analyze
             </button>
             <button
-              type="button"
+              type="reset"
               className="btn btn-danger"
               data-testid="reset-id"
               onClick={resetApp}
