@@ -1,5 +1,6 @@
 export function analyze(text: string): Map<string, number> {
   const map = new Map<string, number>();
+  
   const words = text.split(" ");
 
   for (const word of words) {
@@ -18,4 +19,4 @@ export function analyze(text: string): Map<string, number> {
   return map;
 }
 
-console.log(analyze("mustafa   mustafa  "));
+// console.log(analyze("mustafa   mustafa  "));

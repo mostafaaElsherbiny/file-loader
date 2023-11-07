@@ -17,11 +17,9 @@ function FileLoader() {
   const [loadedText, setLoadedText] = useState<string>("");
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
-    resetParentMessage();
-
+    resetApp();
     const selectedFile = event.target.files?.[0];
 
-    //if file not a TEXT file change message to warning
     if (selectedFile?.type !== "text/plain") {
       setMessageStatus("warning");
 
@@ -55,6 +53,12 @@ function FileLoader() {
   const resetParentMessage = () => {
     setMessageStatus("none");
     setMessage("");
+  };
+
+  const resetApp = () => {
+    resetParentMessage();
+    setLoadedText("");
+    setAnalyzedData(undefined);
   };
 
   const analyzeCurrentContent = () => {
@@ -103,14 +107,24 @@ function FileLoader() {
             resetParentMessage={resetParentMessage}
           />
 
-          <button
-            type="button"
-            className="btn"
-            data-testid="analyze-id"
-            onClick={analyzeCurrentContent}
-          >
-            Analyze
-          </button>
+          <div className="action-wrapper">
+            <button
+              type="button"
+              className="btn"
+              data-testid="analyze-id"
+              onClick={analyzeCurrentContent}
+            >
+              Analyze
+            </button>
+            <button
+              type="reset"
+              className="btn btn-danger"
+              data-testid="reset-id"
+              onClick={resetApp}
+            >
+              Reset
+            </button>
+          </div>
         </form>
       </div>
     </>
